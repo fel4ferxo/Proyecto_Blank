@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B45DA199-D19C-45FF-8BC1-90A2B306AE10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tareo.Aplicacion</RootNamespace>
+    <AssemblyName>Tareo.Aplicacion</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SCode\IServicios\" />
+    <Folder Include="SCode\Servicios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Aplicacion\Core.Aplicacion.csproj">
+      <Project>{fdf47689-97f7-478f-a3f4-22813064a783}</Project>
+      <Name>Core.Aplicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Dominio.Entidades\Core.Dominio.Entidades.csproj">
+      <Project>{45d41eaa-be87-40d7-bacf-315c28df7b30}</Project>
+      <Name>Core.Dominio.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Dominio\Core.Dominio.csproj">
+      <Project>{7ae5063e-32a6-4f56-b8b6-5da41329db89}</Project>
+      <Name>Core.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tareo.Aplicacion.Dto\Tareo.Aplicacion.Dto.csproj">
+      <Project>{7cc1f6b0-81fb-477a-8308-4339d1794435}</Project>
+      <Name>Tareo.Aplicacion.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tareo.Dominio.Entidades\Tareo.Dominio.Entidades.csproj">
+      <Project>{7dd4aeb4-129f-4943-ac82-02797ba8055a}</Project>
+      <Name>Tareo.Dominio.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tareo.Dominio\Tareo.Dominio.csproj">
+      <Project>{30a69384-77e9-4c90-bf7b-2c80c5209854}</Project>
+      <Name>Tareo.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

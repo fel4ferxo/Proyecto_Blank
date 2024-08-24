@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Sistema</title>
+    <!--STYLESHEET-->
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/fontawesone")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/plugins/table-custom/table.css")
+    @Styles.Render("~/plugins/bootstrap-datepicker/bootstrap-datepicker.css")
+    @Styles.Render("~/plugins/bootstrap-select/bootstrap-select.min.css")
+    @Styles.Render("~/plugins/bootstrap3-editable/css/bootstrap-editable.css")
+    @Styles.Render("~/Content/theme.css")
+
+    @Styles.Render("~/Content/PrimeUI/css/theme.css")
+    @Styles.Render("~/Content/PrimeUI/css/jquery-ui.css")
+    @Styles.Render("~/Content/PrimeUI/css/primeui.min.css")
+    @Styles.Render("~/Content/PrimeUI/css/icons/css/font-awesome.min.css")
+
+    @Styles.Render("~/Content/JExcel/css/jsuites.css")
+    @Styles.Render("~/Content/JExcel/css/jexcel.css")
+    @Styles.Render("~/Content/Spectrum/spectrum.min.css")
+    
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico">
+    <!--SCRIPT-->
+    @Styles.Render("~/bundles/progresscss")
+    @Scripts.Render("~/bundles/progressjs")
+    @Scripts.Render("~/Scripts/jquery-1.12.4.min.js")
+    @Scripts.Render("~/Content/principal/Principal.js")
+    @Scripts.Render("~/Content/principal/validator.js")
+    <!--[if lt IE 9]>
+    @Scripts.Render("~/bundles/ie8")
+    <![endif]-->
+</head>
+
+<body>
+    <div class="loader-box" style="display:none">
+        <img class="loader-gif" src="~/Content/images/loader.gif" />
+    </div>
+
+    <div id="container" class="effect mainnav-lg navbar-fixed mainnav-fixed">
+        <!--NAVBAR-->
+        <header id="navbar" style="height:50px">
+            @{
+                Html.RenderPartial("_Header");
+            }
+        </header>
+
+        <div class="boxed">
+            <!--CONTENT CONTAINER-->
+            @RenderBody()
+
+            <!--MAIN NAVIGATION-->
+            @{
+                Html.RenderPartial("_SideMenu");
+            }
+
+        </div>
+        <!-- FOOTER -->
+        <footer id="footer" style="font-size:8pt;">
+            <div class="hide-fixed pull-right pad-rgt">Version v1.0</div>
+            <p class="pad-lft">&copy; @DateTime.Now.Year Innnovacis Consulting SRL</p>
+        </footer>
+
+        <!-- SCROLL TOP BUTTON -->
+        <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/Content/PrimeUI/js/jquery-ui.js")
+    @Scripts.Render("~/Content/PrimeUI/js/primeui-all.min.js")
+    @Scripts.Render("~/Content/PrimeUI/js/x-tag-core.min.js")
+    @Scripts.Render("~/Content/PrimeUI/js/primeelements.min.js")
+    @Scripts.Render("~/Content/PrimeUI/js/perfect-scrollbar.js")
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Content/JExcel/js/jsuites v4.17.5.js")
+    @Scripts.Render("~/Content/JExcel/js/jexcel v4.10.1.js")
+
+    @RenderSection("scripts", required: false)
+    <!--JAVASCRIPT-->
+    @Scripts.Render("~/bundles/js")
+    <!--[if (gt IE 8)|!(IE) ]> -->
+    @Scripts.Render("~/bundles/ie9")
+    <!--<![endif]-->
+    @Scripts.Render("~/bundles/promise")
+
+    @Scripts.Render("~/plugins/bootstrap-datepicker/bootstrap-datepicker.js")
+    @Scripts.Render("~/plugins/bootstrap-select/bootstrap-select.min.js")
+    @Scripts.Render("~/plugins/bootstrap3-editable/js/bootstrap-editable.js")
+    @Scripts.Render("~/Scripts/jquery.placeholder.js")
+    @Scripts.Render("~/plugins/bootbox/bootbox.min.js")
+    @Scripts.Render("~/plugins/sweetalert/promise.min.js")
+    @Scripts.Render("~/plugins/sweetalert/sweetalert2.all.min.js")
+
+    @Scripts.Render("~/Content/BlockUI/jquery.blockUI.js")
+
+</body>
+</html>

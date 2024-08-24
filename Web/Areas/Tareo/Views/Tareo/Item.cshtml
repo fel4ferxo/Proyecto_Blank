@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "Seguimiento de Carga";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section scripts
+{
+    <script type="text/javascript">
+	    var urlGetAll = '@Url.Action("GetAll", "../api/Item")';
+        var urlInsert = '@Url.Action("Insert", "../api/Item")';
+        var urlUpdate = '@Url.Action("Update", "../api/Item")';
+        var urlGetPaged = '@Url.Action("GetPaged", "../api/Item")';
+        var urlCountAll = '@Url.Action("CountAll", "../api/Item")';
+        var urlDelete = '@Url.Action("Delete", "../api/Item")';
+        var urlGetItemById='@Url.Action("GetItemById", "../api/Item")';
+    </script>
+
+    @Scripts.Render("~/Areas/Tareo/Content/Item.js")
+
+}
+
+
+<div id="idMessage"></div>
+
+<div class="row wrapper-content" style="padding-left: 200px; padding-right: 50px;">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Administrar Items</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <button type="button"
+                                class="btn btn-sm btn-primary"
+                                style="float: right;"
+                                onclick="eventClickOpenModalInsert()">
+                            Nuevo registro
+                        </button>
+                        @*<button id="insert" type="button">Nuevo</button>*@
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="row wrapper">
+                    <div class="col-md-12">
+                        <div id="default">
+                            <h3>Filtro</h3>
+                            <div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                            Nombre
+                                        </label>
+                                        <div class="col-md-10 col-sm-10 col-xs-12">
+                                            <input id="filtroNombre" type="text" is="p-inputtext" style="width:100%;" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                            Descripcion
+                                        </label>
+                                        <div class="col-md-10 col-sm-10 col-xs-12">
+                                            <input id="filtroDescripcion" type="text" is="p-inputtext" style="width:100%;" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-xs btn-primary" onclick="eventFilterItems()">
+                                        <i class="fa fa-filter"></i>
+                                        &nbsp; Filtrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div id="tblremoteeager" class="mt-table"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalContent" style="display: none;">
+
+
+    <div id="dlgInsert" title="Nuevo elemento">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div class="form-horizontal form-label-left">
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                Nombre
+                            </label>
+                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                <input id="txtNombre"
+                                       type="text"
+                                       is="p-inputtext"
+                                       style="width:100%;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                Descripcion
+                            </label>
+                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                <input id="txtDescripcion"
+                                       type="text"
+                                       is="p-inputtext"
+                                       style="width:100%;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dlgUpdate" title="Actualizar elemento">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div class="form-horizontal form-label-left">
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                Nombre
+                            </label>
+                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                <input id="txtUpdNombre" type="text" class="form-control" style="width:100%;" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                Descripcion
+                            </label>
+                            <div class="col-md-10 col-sm-10 col-xs-12">
+                                <input id="txtUpdDescripcion" type="text" is="p-inputtext" style="width:100%;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dlgDelete" title="Borrar elemento">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div class="form-horizontal form-label-left">
+                        <div class="form-group">
+                            Esta seguro de eliminar el registro?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

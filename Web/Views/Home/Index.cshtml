@@ -1,0 +1,687 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+
+<style type="text/css">
+
+
+    /*Diseño del texto interno de la tarjeta*/
+    .navbar-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        font-size: 16px;
+    }
+    /*Fin del diseño de texto interno de la tarjeta*/
+
+    /*Inicio del CSS para las tarjetas de prueba*/
+
+    body {
+        margin: 0;
+        padding: 0;
+        /*font-size: 16px;*/
+        line-height: 1.5;
+        text-rendering: optimizeLegibility;
+        font-variant-ligatures: none;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        background-color: #fafafa;
+    }
+
+        body::before,
+        body::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        body * {
+            box-sizing: inherit;
+        }
+
+    p, h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    body, .text-light-black {
+        color: rgba(0,0,0,0.6);
+    }
+
+    .text-black {
+        color: rgba(0,0,0,0.9);
+    }
+
+    .text-muted {
+        color: rgba(0, 0, 0, 0.3);
+    }
+
+
+
+    .text-uppercase {
+        text-transform: uppercase;
+    }
+
+    .ff-serif {
+        font-family: 'Lora', serif;
+    }
+
+    .font-weight-normal {
+        font-weight: normal;
+    }
+
+    .font-weight-medium {
+        font-weight: 500;
+    }
+
+    .lts-1px {
+        letter-spacing: 1px;
+    }
+
+    .lts-2px {
+        letter-spacing: 2px;
+    }
+
+
+    .w-full {
+        width: 100%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .d-block {
+        display: block;
+    }
+
+    .d-inline-block {
+        display: inline-block;
+    }
+
+    .p-relative {
+        position: relative;
+    }
+
+    .p-absolute {
+        position: absolute
+    }
+
+
+
+    .bg-white {
+        background-color: #fff;
+    }
+
+    .small {
+        font-size: 0.75rem;
+    }
+
+    .card-heading {
+        font-size: 1.25rem;
+    }
+
+    .styled-link {
+        text-decoration: none;
+        outline: none;
+        color: #2196fe;
+        transition: all 0.25s ease-in;
+    }
+
+        .styled-link:hover,
+        .styled-link:focus,
+        .styled-link:active {
+            color: #536dfe;
+        }
+
+    .shadow-1 {
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
+    }
+
+    .blue-hover {
+        transition: all 0.25s ease-in;
+        border-bottom: 5px solid transparent;
+    }
+
+        .blue-hover:hover {
+            transform: translateY(-5px);
+            border: none;
+            border-bottom: 5px solid #2196fe;
+        }
+
+    .clearfix::before,
+    .clearfix::after {
+        content: "";
+        display: none;
+        clear: both;
+    }
+
+    .float-left {
+        float: left;
+    }
+
+    .float-right {
+        float: right;
+    }
+
+    *Margin and padding utilities
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ml-auto {
+        margin-left: auto;
+    }
+
+    .mr-auto {
+        margin-right: auto;
+    }
+
+    .mx-0 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .mx-1 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .mx-2 {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .mx-3 {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+
+    .my-0 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .my-1 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .my-2 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .my-3 {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .mt-0 {
+        margin-top: 0;
+    }
+
+    .mt-1 {
+        margin-top: 1rem;
+    }
+
+    .mt-2 {
+        margin-top: 2rem;
+    }
+
+    .mt-3 {
+        margin-top: 3rem;
+    }
+
+    .mb-0 {
+        margin-bottom: 0;
+    }
+
+    .mb-1 {
+        margin-bottom: 1rem;
+    }
+
+    .mb-2 {
+        margin-bottom: 2rem;
+    }
+
+    .mb-3 {
+        margin-bottom: 3rem;
+    }
+
+    .ml-0 {
+        margin-left: 0;
+    }
+
+    .ml-1 {
+        margin-left: 1rem;
+    }
+
+    .ml-2 {
+        margin-left: 2rem;
+    }
+
+    .ml-3 {
+        margin-left: 3rem;
+    }
+
+
+
+
+    .px-0 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .px-1 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .px-2 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .px-3 {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+
+    .py-0 {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .py-1 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .py-2 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .py-3 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .pt-0 {
+        padding-top: 0;
+    }
+
+    .pt-1 {
+        padding-top: 1rem;
+    }
+
+    .pt-2 {
+        padding-top: 2rem;
+    }
+
+    .pt-3 {
+        padding-top: 3rem;
+    }
+
+    .pb-0 {
+        padding-bottom: 0;
+    }
+
+    .pb-1 {
+        padding-bottom: 1rem;
+    }
+
+    .pb-2 {
+        padding-bottom: 2rem;
+    }
+
+    .pb-3 {
+        padding-bottom: 3rem;
+    }
+
+    /*Fin del CSS para las tarjetas de prueba*/
+    #contentBox {
+        margin-left: 50px;
+    }
+
+    /* fallback */
+
+
+    .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px; /* Preferred icon size */
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+    }
+
+    /*JEXCEL*/
+
+    .jexcel_toolbar i.jexcel_toolbar_item {
+        width: 28px;
+        height: 28px;
+        padding: 4px;
+    }
+
+    .material-icons {
+        font-size: 20px;
+    }
+
+    .jexcel thead tr:first-child td:nth-child(n+3) {
+        background-color: #A9D08E;
+        color: #000;
+    }
+
+    .jexcel thead tr:nth-child(3) td {
+        white-space: normal;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .icon-ctm {
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    .x_panel {
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px 17px;
+        display: inline-block;
+        background: #fff;
+        border: 1px solid #E6E9ED;
+        -webkit-column-break-inside: avoid;
+        -moz-column-break-inside: avoid;
+        column-break-inside: avoid;
+        opacity: 1;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+        border-radius: 10px;
+    }
+
+    .x_content {
+        border: none;
+    }
+
+    .ui-datepicker {
+        z-index: 1000 !important;
+    }
+
+    .form-horizontal .control-label {
+        padding-top: 4px;
+    }
+
+    .title1 {
+        padding: 14px 25px;
+        font-size: 18px;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: .25s;
+        background: #035195;
+        color: #fff;
+        margin: 0 0 8px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btntamanyo {
+        min-width: 100px;
+        width: 100px;
+        height: 70px;
+        border-radius: 10px;
+    }
+
+    .classAprobado {
+        background: #449D44;
+        padding: 5px 10px 3px 20px;
+        color: white;
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .classEnEspera {
+        background: #f7a001;
+        padding: 5px 10px 3px 20px;
+        color: white;
+        width: 100%;
+        font-size: 10px;
+    }
+
+
+    .classRechazado {
+        background: #dc3545;
+        padding: 5px 10px 3px 20px;
+        color: white;
+        width: 100%;
+        font-size: 10px;
+    }
+</style>
+
+<div id="content-container">
+    <div class="pageheader">
+        <h3><i class="icon-home icons"></i> Inicio </h3>
+        <div class="breadcrumb-wrapper">
+            <span class="label"></span>
+            <ol class="breadcrumb">
+                <li> <a href="#"> Inicio </a> </li>
+                <li class="active"> Inicio </li>
+            </ol>
+        </div>
+    </div>
+    <div id="page-content">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="container-fuild">
+                            @*-------------------Inicio del Bloque de la tarjeta(background)-------------------------*@
+                            <div class="x_panel py-3" id="contenido">
+                                <div class="x_content">
+                                    @*-------------------Inicio del contenido de la tarjeta(background)-------------------------*@
+                                    <div class="d-flex justify-content-around">
+                                        <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 200px; overflow: hidden; border-radius: 1px">
+                                            <!-- Inicio Contenido de la primera tarjeta -->
+                                            <img src="https://media.istockphoto.com/id/1330517314/es/vector/lista-de-verificaci%C3%B3n-de-camping-vector-colores-azules-icono-icono-ilustraci%C3%B3n-archivo-eps-10.jpg?s=1024x1024&w=is&k=20&c=Q7mupuJ4qeez8_DVKzmCdm6HkhQf_8ouGr9GZKNN5QA=" alt="Man with backpack" class="d-block w-full">
+                                            <div class="px-2 py-2">
+                                                <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                                                    Tarjeta Tareo
+                                                </p>
+                                                <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                                                    <div class="navbar-grid">
+                                                        <a href="~/Tareo/Tareo/SeguimientoGeneral">
+                                                            <span class="menu-title">  Seguimiento General</span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/BandejaTareo">
+                                                            <span class="menu-title">  Bandeja</span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/BandejaSeguimiento">
+                                                            <span class="menu-title">  Seguimiento </span>
+                                                        </a>
+                                                    </div>
+                                                </h1>
+                                            </div>
+                                            <!-- Fin Contenido de la primera tarjeta -->
+                                        </div>
+                                        <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 200px; overflow: hidden; border-radius: 1px">
+                                            <!-- Inicio Contenido de la segunda tarjeta -->
+                                            <img src="https://media.istockphoto.com/id/1342038808/es/vector/estad%C3%ADsticas-vector-colores-azules-icono-ilustraci%C3%B3n-de-estilo-archivo-eps-10.jpg?s=2048x2048&w=is&k=20&c=lQX8khFZn7OEwe5VAnm1354z5gx7ZQp_yFFxQnxtT7Y=" alt="Man with backpack" class="d-block w-full">
+                                            <div class="px-2 py-2">
+                                                <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                                                    Tarjeta Sobretiempos
+                                                </p>
+                                                <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                                                    <div class="navbar-grid">
+                                                        <a href="~/Tareo/Tareo/SobreTiempo">
+                                                            <span class="menu-title">  Sobretiempos </span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/BandejaSobreTiempo">
+                                                            <span class="menu-title">  Bandeja </span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/BandejaSeguimientoSobreTiempo">
+                                                            <span class="menu-title">  Seguimiento </span>
+                                                        </a>
+                                                    </div>
+                                                </h1>
+                                            </div>
+                                            <!-- Fin Contenido de la segunda tarjeta -->
+                                        </div>
+                                        <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 200px; overflow: hidden; border-radius: 1px">
+                                            <!-- Inicio Contenido de la tercera tarjeta -->
+                                            <img src="https://media.istockphoto.com/id/1346593096/es/vector/programaci%C3%B3n-planificaci%C3%B3n-vector-color-color-azul-icono-ilustraci%C3%B3n-estilo-archivo-eps-10.jpg?s=1024x1024&w=is&k=20&c=ZnoVqz42pWM2XKr1liAiMkG1ssRgIiq_WOarjrG7bxY=" alt="Man with backpack" class="d-block w-full">
+                                            <div class="px-2 py-2">
+                                                <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                                                    Tarjeta Reportes
+                                                </p>
+                                                <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                                                    <div class="navbar-grid">
+                                                        <a href="~/Tareo/Tareo/ReporteMarcacionFaltante">
+                                                            <span class="menu-title"> Marcacion Faltante </span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/RegistroHistorico">
+                                                            <span class="menu-title"> Registro Histórico</span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/ReporteIncidencias">
+                                                            <span class="menu-title"> Incidencias </span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/Remuneraciones">
+                                                            <span class="menu-title"> Remuneraciones</span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/ReporteFeriados">
+                                                            <span class="menu-title"> Feriados y días libres</span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/ReporteTardanzas">
+                                                            <span class="menu-title"> Tardanzas y Sobretiempos</span>
+                                                        </a>
+                                                    </div>
+                                                </h1>
+                                            </div>
+                                            <!-- Fin Contenido de la tercera tarjeta -->
+                                        </div>
+                                    </div>
+                                    @*Segunda linea de Tarjetas*@
+                                    <div class="d-flex justify-content-around">
+                                        <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 200px; overflow: hidden; border-radius: 1px">
+                                            <!-- Inicio Contenido de la cuarta tarjeta -->
+                                            <img src="https://media.istockphoto.com/id/1276530687/es/vector/ilustraci%C3%B3n-de-estilo-vectorial-de-informe-financiero.jpg?s=1024x1024&w=is&k=20&c=Lp0n3j2dS0H_fIFTibaSIBJzaLpZ_BKCrRO9ULXp5FI=" alt="Man with backpack" class="d-block w-full">
+                                            <div class="px-2 py-2">
+                                                <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                                                    Tarjeta Formularios
+                                                </p>
+                                                <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                                                    <div class="navbar-grid">
+                                                        <a href="~/Tareo/Tareo/FormularioMarcacionFaltante">
+                                                            <span class="menu-title">  Marcacion faltante</span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/FormularioIncidenteFaltanteRevision">
+                                                            <span class="menu-title">  Incidente faltante</span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/RegistroIncidenciasLider">
+                                                            <span class="menu-title">  Registro de Incidencias</span>
+                                                        </a>
+                                                    </div>
+                                                </h1>
+                                            </div>
+                                            <!-- Fin Contenido de la cuarta tarjeta -->
+                                        </div>
+                                        <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 200px; overflow: hidden; border-radius: 1px">
+                                            <!-- Inicio Contenido de la quinta tarjeta -->
+                                            <img src="https://media.istockphoto.com/id/1354674453/es/vector/duplicar-colores-azules-vectoriales-ilustraci%C3%B3n-de-dise%C3%B1o-de-iconos-s%C3%ADmbolo-de-aplicaci%C3%B3n.jpg?s=1024x1024&w=is&k=20&c=iu49utqIkoKSsp9lE_4YU0BdtD6NSUXYJId_T0UAFm0=" alt="Man with backpack" class="d-block w-full">
+                                            <div class="px-2 py-2">
+                                                <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                                                    Tarjeta Flujos
+                                                </p>
+                                                <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                                                    <div class="navbar-grid">
+                                                        <a href="~/Tareo/Tareo/FlujoMarcacionFaltante">
+                                                            <span class="menu-title">  Marcacion faltante</span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/configAprobador">
+                                                            <span class="menu-title">  Aprobador de Incidencias</span>
+                                                        </a>
+                                                    </div>
+                                                </h1>
+                                            </div>
+                                            <!-- Fin Contenido de la quinta tarjeta -->
+                                        </div>
+                                        <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 200px; overflow: hidden; border-radius: 1px">
+                                            <!-- Inicio Contenido de la sexta tarjeta -->
+                                            <img src="https://media.istockphoto.com/id/1354674969/es/vector/lista-de-comprobaci%C3%B3n-vector-colores-azules-icon-design-ilustraci%C3%B3n-s%C3%ADmbolo-de-aplicaci%C3%B3n.jpg?s=1024x1024&w=is&k=20&c=xcJkJbbQiYrXKnN2_71ZNs2fkQsj-mA5PGKch1CCZkM=" alt="Man with backpack" class="d-block w-full">
+                                            <div class="px-2 py-2">
+                                                <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                                                    Tarjeta Configuracion
+                                                </p>
+                                                <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                                                    <div class="navbar-grid">
+                                                        <a href="~/Tareo/Tareo/Leyenda">
+                                                            <span class="menu-title">  Leyenda</span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/Roaster">
+                                                            <span class="menu-title">  Roster</span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/Trabajadores">
+                                                            <span class="menu-title">  Listado de personas </span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/HistorialAcciones">
+                                                            <span class="menu-title">  Historial de Acciones </span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/ListaIncidentes">
+                                                            <span class="menu-title">  Lista de Incidentes </span>
+                                                        </a>
+                                                        <a href="~/Tareo/Tareo/ConfiguracionMotivo">
+                                                            <span class="menu-title">  Motivos de marcacion faltante</span>
+                                                        </a>
+                                                    </div>
+                                                </h1>
+                                            </div>
+                                            <!-- Fin Contenido de la sexta tarjeta -->
+                                        </div>
+                                    </div>
+                                    @*----------------Pie de pagina del bloque tarjetas---------------------*@
+                                    <div class="w-full bg-white py-1 px-2 clearfix" style="border-top: 1px solid rgba(0,0,0,0.12);">
+                                        <span class="float-left">
+                                            Tarjetas Prueba
+                                        </span>
+                                        <span class="float-right">
+                                            Version V1.0 tarjetas prueba
+                                        </span>
+                                    </div>
+                                    @*----------------Fin del Pie de pagina de todas del bloque tarjetas---------------------*@
+                                    @*-------------------Fin del contenido de la tarjeta(background)-------------------------*@
+                                </div>
+                            </div>
+                            @*----------------FIN DEL BACKGORUND DEL BLOQUE TARJETA--------------*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

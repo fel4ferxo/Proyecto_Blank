@@ -1,0 +1,130 @@
+﻿<style>
+    @@media only screen and (max-width: 600px) {
+        .innn-header-info{
+            display:none;
+        }
+        #content-container {
+            margin-top: 14px;
+        }
+        .navbar-content.clearfix {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 7px;
+        }
+    }
+</style>
+<div id="navbar-container" class="boxed" style="height:50px">
+    <div class="navbar-header">
+        <span class="navbar-content" style="margin-left:0px;font-size:18pt;"><i class="icon-menu icons mainnav-toggle brand-icon"></i></span>
+        <!--<a href="index.html" class="navbar-brand" style="height:45px">
+            <div class="brand-title">
+               <img src="~/Content/images/logo_empresa.png" alt="Antapaccay" height="40">-->
+                @*<span class="brand-text">Logo Empresa</span>*@
+            <!--</div>
+        </a>-->
+    </div>
+    <div class="navbar-content clearfix" style="height:50px">
+        <div class="pull-left innn-header-info">
+            @*<span><b>Sitio:</b> Antapaccay - Glencore </span><br>*@
+            <span><b>Area:</b> Finanzas</span><br>
+            <span><b>Nombre Empresa:</b> Módulo Tareo</span>
+        </div>
+        <ul class="nav navbar-top-links pull-left">
+            <li class="hidden-xs" id="toggleFullscreen">
+                <a class="fa fa-expand" data-toggle="fullscreen" href="#" role="button">
+                    <span class="sr-only">Toggle fullscreen</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-top-links pull-right" style="height:50px">
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <i class="icon-bell icons" style="font-size:16pt"></i> <span class="badge badge-header badge-danger">5</span> </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-md with-arrow">
+                    <div class="nano scrollable">
+                        <div class="nano-content">
+                            <ul class="head-list">
+                                <li>
+                                    <a href="#" class="media">
+                                        <div class="media-left"> <span class="icon-wrap icon-circle bg-primary"> <i class="fa fa-comment fa-lg"></i> </span> </div>
+                                        <div class="media-body">
+                                            <div class="text-nowrap">Se genero una nueva sincronización de los incidentes People Net</div>
+                                            <small class="text-muted">15 minutes atras</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="media">
+                                        <span class="badge badge-success pull-right">90%</span>
+                                        <div class="media-left"> <span class="icon-wrap icon-circle bg-danger"> <i class="fa fa-hdd-o fa-lg"></i> </span> </div>
+                                        <div class="media-body">
+                                            <div class="text-nowrap">Se realizó una modificación, en los incidentes </div>
+                                            <div class="text-nowrap">Maria Urquizo </div>
+                                            <small class="text-muted">50 minutos atras</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="media">
+                                        <div class="media-left"> <span class="icon-wrap icon-circle bg-info"> <i class="fa fa-file-word-o fa-lg"></i> </span> </div>
+                                        <div class="media-body">
+                                            <div class="text-nowrap">Se envio a Aprobacion</div>
+                                            <div class="text-nowrap">Cesar Torres</div>
+                                            <small class="text-muted">Ultima actualizacion 8 horas atras</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="media">
+                                        <span class="label label-danger pull-right">Nuevo</span>
+                                        <div class="media-left"> <span class="icon-wrap icon-circle bg-purple"> <i class="fa fa-comment fa-lg"></i> </span> </div>
+                                        <div class="media-body">
+                                            <div class="text-nowrap">Se realizo la aprobación</div>
+                                            <div class="text-nowrap">Alvaro Gomez</div>
+                                            <small class="text-muted">Ultima actualizacion 8 horas atras</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="media">
+                                        <div class="media-left"> <span class="icon-wrap icon-circle bg-success"> <i class="fa fa-user fa-lg"></i> </span> </div>
+                                        <div class="media-body">
+                                            <div class="text-nowrap">Usuarios actualizados con Nuevo roster</div>
+                                            <div class="text-nowrap">Maria Urquizo</div>
+                                            <small class="text-muted">4 minutos atras</small>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pad-all bord-top">
+                        <a href="#" class="btn-link text-dark box-block"> <i class="fa fa-angle-right fa-lg pull-right"></i>Mostrar Todas las Notificaciones </a>
+                    </div>
+                </div>
+            </li>
+            <li id="dropdown-user" class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right" style="font-size:11px;">
+                    <span class="pull-right"> <img class="img-circle img-user media-object" src="~/Content/images/user02.png" alt="Imagen Perfil" style="margin-top:-10px;"> </span>
+                    <ul style="white-space:nowrap;margin:0 10px;float:right;list-style-type:none;padding:0px;"><li>WILFREDO QUISPE INFANTES</li><li>Administrador</li></ul>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right with-arrow">
+                    <ul class="head-list">
+                        <li>
+                            <a href="#"> <i class="fa fa-user fa-fw"></i> Perfil </a>
+                        </li>
+                        <li>
+                            <a href="#">  <i class="fa fa-envelope fa-fw"></i> Mensajes </a>
+                        </li>
+                        <li>
+                            <a href="#">  <i class="fa fa-gear fa-fw"></i> Configuracion </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa fa-sign-out fa-fw"></i> Salir </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
